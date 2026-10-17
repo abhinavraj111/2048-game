@@ -48,8 +48,10 @@
       display: flex;
       gap: 10px;
       align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-    button {
+    button, .link-btn {
       background: #8f7a66;
       color: white;
       border: none;
@@ -58,8 +60,14 @@
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
     }
-    button:hover { background: #9f8b77; }
+    button:hover, .link-btn:hover { background: #9f8b77; }
+    .link-btn {
+      background: #4a6cf7;
+    }
+    .link-btn:hover { background: #5a7cf7; }
     .game-container {
       position: relative;
       background: #bbada0;
@@ -145,6 +153,7 @@
   </div>
   <div class="controls">
     <button id="new-game">New Game</button>
+    <a class="link-btn" href="ai-3d.html">Play AI 3D Chase →</a>
   </div>
   <div class="game-container">
     <div class="grid" id="grid"></div>
@@ -290,7 +299,6 @@
       }
     });
 
-    // Touch / swipe support
     let startX, startY;
     document.addEventListener("touchstart", e => {
       startX = e.touches[0].clientX;
